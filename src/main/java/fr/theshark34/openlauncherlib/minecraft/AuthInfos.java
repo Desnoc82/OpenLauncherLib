@@ -51,6 +51,8 @@ public class AuthInfos
      * The uuid given by the authentication
      */
     private final String uuid;
+    
+    private final boolean banned;
 
     /**
      * Basic constructor
@@ -80,6 +82,15 @@ public class AuthInfos
         this.accessToken = accessToken;
         this.clientToken = clientToken;
         this.uuid        = uuid;
+    }
+    
+    public AuthInfos(String username, String accessToken, String clientToken, String uuid, boolean banned)
+    {
+        this.username    = username;
+        this.accessToken = accessToken;
+        this.clientToken = clientToken;
+        this.uuid        = uuid;
+        this.banned      = banned;
     }
 
     /**
@@ -113,4 +124,10 @@ public class AuthInfos
     {
         return this.uuid;
     }
+    
+    public boolean isBanned()
+    {
+        return this.banned;
+    }
+    
 }
